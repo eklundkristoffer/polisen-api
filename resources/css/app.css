@@ -1,0 +1,131 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+ @import './_animate.css';
+
+[v-cloak] {
+    display: none;
+}
+
+ @font-face {
+    font-family: 'sofiapro-light';
+    src: url('/fonts/sofiapro-light-webfont.woff2') format('woff2'),
+         url('/fonts/sofiapro-light-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+html {
+  height: 100%;
+}
+body {
+  min-height: 100%;
+}
+
+body {
+    font-family: "sofiapro-light", sans-serif;
+
+        color: #676468;
+    font-size: 20px;
+    line-height: 1.2;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.btn {
+    display: inline-block;
+    font-size: 12px;
+    line-height: 1;
+    border: none;
+    width: auto;
+    padding: 0;
+    margin: 0;
+
+    &.btn-block {
+        text-align: center;
+        display: block;
+    }
+    
+    @apply bg-blue-500;
+    @apply tracking-wide;
+    @apply no-underline;
+    @apply uppercase;
+    @apply text-xs;
+    @apply font-sans;
+    @apply font-medium;
+    @apply rounded;
+    @apply text-white;
+    @apply px-6;
+    @apply py-4;
+
+    &.btn-sm {
+        @apply px-4;
+        @apply py-3;
+    }
+
+    @apply cursor-pointer;
+
+    &, &:hover, &:active, &:focus {
+        @apply outline-none;
+    }
+
+    &.active {
+        @apply bg-blue-800;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.loader,
+.loader:after {
+  border-radius: 50%;
+  width: 10em;
+  height: 10em;
+}
+.loader {
+  margin: 60px auto;
+  font-size: 10px;
+  position: relative;
+  text-indent: -9999em;
+  border-top: 1.1em solid #fff;
+  border-right: 1.1em solid #fff;
+  border-bottom: 1.1em solid #fff;
+  border-left: 1.1em solid #6cb2eb;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-animation: load8 1.1s infinite linear;
+  animation: load8 1.1s infinite linear;
+}
+@-webkit-keyframes load8 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes load8 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
