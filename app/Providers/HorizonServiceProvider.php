@@ -34,9 +34,9 @@ class HorizonServiceProvider extends HorizonApplicationServiceProvider
     protected function gate()
     {
         Gate::define('viewHorizon', function ($user = null) {
-            $allowed_ips = explode(',', config('horizon.ip_whitelist'));
+            $view_tokens = explode(',', config('horizon.view_tokens'));
 
-            return in_array(request()->ip(), $allowed_ips);
+            return in_array(request()->get('view_token'), $view_tokens);
         });
     }
 }

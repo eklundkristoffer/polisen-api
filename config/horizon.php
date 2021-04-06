@@ -4,7 +4,7 @@ use Illuminate\Support\Str;
 
 return [
 
-    'ip_whitelist' => env('HORIZON_IP_WHITELIST'),
+    'view_tokens' => env('HORIZON_VIEW_TOKENS'),
 
     /*
     |--------------------------------------------------------------------------

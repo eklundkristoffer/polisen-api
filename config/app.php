@@ -2,10 +2,6 @@
 
 return [
 
-    'cloudflare' => [
-        'enabled' => env('CLOUDFLARE_ENABLED', false),
-    ],
-
     /*
     |--------------------------------------------------------------------------
     | Application Name
