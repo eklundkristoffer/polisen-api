@@ -36,7 +36,13 @@ class HorizonServiceProvider extends HorizonApplicationServiceProvider
         Gate::define('viewHorizon', function ($user = null) {
             $view_tokens = explode(',', config('horizon.view_tokens'));
 
-            return in_array(request()->get('view_token'), $view_tokens);
+            $can_view_horizon = in_array(request()->get('view_token'), $view_tokens) || session()->has('can_view_horizon');
+
+            if ($can_view_horizon && !session()->has('can_view_horizon')) {
+                session()->put('can_view_horizon', true);
+            }
+
+            return $can_view_horizon;
         });
     }
 }
