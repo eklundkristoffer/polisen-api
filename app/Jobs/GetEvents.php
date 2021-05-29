@@ -44,7 +44,7 @@ class GetEvents implements ShouldQueue
             $newEvent->name = $event->name;
             $newEvent->summary = $event->summary;
             $newEvent->type = $event->type;
-            $newEvent->url = $event->url;
+            $newEvent->url = sprintf('https://polisen.se%s', $event->url);
             $newEvent->location_name = $event->location->name;
             $newEvent->location_gps = $event->location->gps;
             $newEvent->happen_at = \Carbon\Carbon::instance($datetime)->toDateTimeString();
